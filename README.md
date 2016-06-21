@@ -1,3 +1,3 @@
-# FEWD - Course Website
+# D3 GEOSPACIAL MAPPING
 
-Compiled by [Chandler Moisen](http://github.com/cheshireoctopus) for [General Assembly's](http://generalassemb.ly) Front End Web Development (FEWD) course.
+Compiled by [Joe Keohan](http://github.com/jkeohan) 
