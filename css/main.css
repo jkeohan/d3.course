@@ -19,3 +19,8 @@ p, li, table, a {
 .push-top-50 {
 	padding-top: 50px;
 }
+
+/*  NAVIGATION */
+
+/* GETTING STARTED - SLIDE 1 */
+h3.text-left { margin-left:20px !important;}

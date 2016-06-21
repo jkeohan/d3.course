@@ -2,14 +2,24 @@
 <html lang="en">
 
 	<head>
-		<title>FEWD - Class 00</title>
+		<title>Mod 1: Getting Started</title>
 		<link rel="stylesheet" href="../css/reveal.css">
 		<link rel="stylesheet" href="../css/theme/general-assembly.css" id="theme">
-
+    <link rel="stylesheet" href="../css/theme/mapping.css" id="theme">
 		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
-
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="../lib/css/zenburn.css">
+    <!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/mod1.css">
+
+	 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+	 <script src="//d3js.org/queue.v1.min.js"></script>
+		<script src="//d3js.org/topojson.v1.min.js"></script>
+	 <script src="https://d3js.org/colorbrewer.v1.min.js"></script>
+
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -25,130 +35,257 @@
 	</head>
 
 	<body>
+		<style>
+		.reveal.slide .slides { width:100% !important; height:100% !important; margin:0;}
 
+		    /* Section 0 */
+		section.center.m1-s0 { width: 1220px; top: 55px;
+    display: block;
+    width: 80%;
+   left: 10%;
+    /*position: relative !important;*/
+  }
+		.m1-s0 h3{ margin-left:50px;}
+		.m1-s0 hr { border: 5px solid steelblue; margin-bottom:50px;}
+		.m1-s0 aside { width: 80%; overflow: hidden; }
+		.profilepic img{ border-radius: 50%; width: 200px}
+		.m1-s0 ul { float: left; list-style-type: none; position: relative;
+    width: 100%}
+		.m1-s0 ul li { display:inline-block;}
+		ul li.myname { position: absolute; margin-top:50px; margin-left: 40px;}
+		ul li.profession { position: absolute; margin-top: 100px; font-size: .7em; margin-left: 40px;}
+		ul li.email { margin-left: 40px; position: absolute; top: 55%; font-size: .7em}
+    
+    /* Section 1 */
+    section.m1-s1 { top:0px !important; padding:0px !important; height:100%;}
+		.m1-s1 .whatulearn { float: left;width: 40%;  height: 100%; display: inline-block;background-color: steelblue;}
+    .m1-s1 section { top:0;}
+    .m1-s1 .whatulearn { color:white;}
+    .m1-s1 .whatulearn h3{ color:white;}
+    .m1-s1 .whatulearn aside { margin-top:100px;}
+    .m1-s1 ul { margin-top: 100px; margin-left: 100px; list-style: none; float:left;}
+    .m1-s1 ul li { margin-bottom: 30px; color:black;}
+
+    /* Section 2 */
+    .m1-s2 .wrapper { padding: 250px 100px;}
+    .m1-s2 hr { border: 5px solid steelblue;}
+
+  /* Section 3 - PROJECTIONS */
+    .m1-s3 #projections { background-color: #cecece;}
+  	.m1-s3 p { text-align: left;}  
+    .m1-s3 aside.slide-title{ float: left;width: 40%;  height: 728px; display: inline-block; padding: 100px 25px; border-right: 5px solid steelblue;}
+    .m1-s3 aside.slide-title p { font-size: .6em;}
+    .m1-s3 aside.projections { float: right;width: 60%;height: 100%;padding: 20px;;}
+    #projections { border: solid 5px white; height:650px;}
+
+    /* Section 4 - Visualize Data */
+     .m1-s4 p { text-align: left;}  
+    .m1-s4 aside.slide-title{ float: left;width: 40%;  height: 728px; display: inline-block; padding: 100px 25px; border-right: 5px solid steelblue;}
+    .m1-s4 aside.slide-title p { font-size: .6em;}
+    .m1-s4 aside.projections { float: right;width: 60%;height: 100%;padding: 20px;;}
+    .m1-s4 aside blockquote { font-size: .6em;}
+    #visualizedata { height:700px;}
+
+    /* Section 5 - Colors */
+    .m1-s5 aside.slide-title{ float: left;width: 40%;  height: 728px; display: inline-block; padding: 100px 25px; border-right: 5px solid steelblue;}
+    .m1-s5 aside.slide-title p { font-size: .6em;}
+    .m1-s5 aside { float: right;width: 60%;height: 100%;padding: 20px;;}
+    .m1-s5 aside blockquote { font-size: .6em;}
+    #colorpalettes { height:700px;}
+
+     /* Section 6 */
+     .m1-s6 aside.slide-title{ float: left;width: 40%;  height: 728px; display: inline-block; padding: 100px 25px; border-right: 5px solid steelblue;}
+    .m1-s6 aside.slide-title p { font-size: .6em;}
+    .m1-s6 aside { float: right;width: 60%;height: 100%;padding: 20px;;}
+    .m1-s6 aside blockquote { font-size: .6em;}
+    #colorpalettes { height:700px;7}
+
+      /* Section 7 */
+    .m1-s7 .wrapper { padding: 250px 100px;}
+    .m1-s7 hr { border: 5px solid steelblue;}
+    .m1-s7 img.fragment.visible { float: left; margin-right:50px; box-shadow: 0 0 0px rgba(0, 0, 0, 0.15) !important;}
+		</style>
 
 		<div class="reveal">
 			<div class="slides">
-				<section class="center">
-					<h1>HELLO</h1>
-					<img src="http://i3.mirror.co.uk/incoming/article6694131.ece/ALTERNATES/s615/Adele-and-lionel-main.jpg" alt="">
+				<section class="center m1-s0" data-background="#FFF">
+					<h1>Geospacial Mapping in D3</h1>
+					<hr>
+					<aside>
+						<h3 class="text-left">Getting Started</h3>
+						<ul>
+							<li class="profilepic left"> <img src="../img/main/joe.jpg" class="img-rounded img-responsive" alt="Joe Keohan" width="100%"></li>
+							<li class="myname">Joe Keohan</li>
+							<li class="profession">Data Visualization Specialist</li>
+							<li class="email">jkeohan@gmail.com</li>
+						</ul>
+					</aside>
 				</section>
 
-				<section class="center">
-					<h1>WELCOME TO FEWD</h1>
+				<section class="center m1-s1" data-background="#FFF">
+					<div class="whatulearn">
+						<aside>
+					  	<h3>What You'll Learn</h3>
+					    <i class="fa fa-list-alt fa-5x"></i>
+					  </aside>
+					</div>
+					<div>
+						<ul>
+							<li class="fragment highlight-blue">Mapping Concepts</li>
+							<li>Client Story</li>
+							<li>Final Project Review</li>
+							<li>Inital Setup</li>
+							<li>More Tools</li>
+						</ul>
+					</div>
 				</section>
 
 				<!-- AGENDA -->
-				<section data-background="#FFF">
-					<h2 class="text-left">Agenda</h2>
+				<section class="m1-s2" data-background="#FFF">
+				 <div class="wrapper">
+					<h2 class="text-left">Mapping Concepts</h2>
 					<hr>
-					<div class="text-left">
-						<p>&#149; Introductions</p>
-						<p>&#149; General Assembly Overview</p>
-						<p>&#149; House-Keeping (expectations, procedures, etc.)</p>
-						<p>&#149; Tools</p>
-						<p>&#149; Git/GitHub</p>
+          <p class="text-left fragment">Projections</p>
+          <p class="text-left fragment">Visualizing the Data</p>
+          <p class="text-left fragment">Color Palettes</p>
+          <p class="text-left fragment">Legends</p>
+				</div>
+				</section>
+
+				<section class="m1-s3" data-background="#FFF">
+					<div class="center">
+						<aside class="slide-title">
+					  	<h3>Projections</h3>
+					  	<p class="fragment"><code>Projection</code> is the process of making a globe, or a portion of it, fit onto a flat surface by transforming Geographic lat\long coordinates into Cartesian pixel coordinates. 
+								<h5 class="fragment">Types of Projections</h5>
+					  		<p class="fragment"><code>Mercator - </code>one of the most popular types of projections and used by Google Maps.</p>
+               <pre class="fragment"><code class="javascript">var projection = d3.geo.mercator()</code></pre>
+               <p class="fragment" id="ortho"> <code>Orthographic - </code>the other most widely projection.</p>
+               <pre class="fragment"><code class="javascript">var projection = d3.geo.orthographic()</code></pre>
+					  </aside>
+					  <aside class="projections">
+										
+							<div class="btn-group btn-group-justified" role="group" aria-label="...">
+							<div class="btn-group" role="group">
+							  <button type="button" class="btn btn-warning proj mer">Mercator</button>
+							 </div>
+							 <div class="btn-group" role="group">
+							   <button type="button" class="btn btn-success proj orth">Orthographic</button>
+							  </div>
+							</div>
+				     <div id="projections"></div>
+						</aside>
 					</div>
 				</section>
 
-				<section class="center">
-					<h1>Introductions</h1>
-				</section>
+				<!-- VIsualizing Data -->
+				<section class="m1-s4" data-background="#FFF">
+					<div class="center">
+						<aside class="slide-title">
+					  	<h3>Visualizing Your Data</h3>
+					  	<p ><blockquote class="fragment">
+					  		"A map does not just chart, it unlocks and formulates meaning; it forms bridges between here and there, between ideas that we did not know were previously connected"
+								<span>-Reif Larsen</span>
+					  		</blockquote>
+					  	</p>
 
-				<!-- INSTRUCTIONAL TEAM -->
-				<section data-background="#FFF">
-					<h2 class="text-left">Instructional Team</h2>
-					<hr>
+					  	<p class="fragment"><code>Choropleth's</code> rely on color to visualize either quantitative or qualitative data sets</p>
+					  	<p class="fragment" id="bubble"><code>Bubble maps</code> are like scatter plots and can represent the data using a combination of color and circle radi.</p>
+					  </aside>
 
-					<div class="text-left">
-						<h4>Instructors</h4>
-						<p class="pad-left-lg">&rArr; Chanlder Moisen - hello@chandlermoisen.com</p>
-						<p class="pad-left-lg">&rArr; Mollie Wolfe - molliewolfe@gmail.com</p>
-						<p class="pad-left-lg">&rArr; Nate Mandes - nate.mandes@ga.com</p>
-					</div>
+					  <aside class="projections">									
+							<div class="btn-group btn-group-justified" role="group" aria-label="...">
+							<div class="btn-group" role="group">
+							  <button type="button" class="btn btn-warning viz choro">Choropleth Map</button>
+							 </div>
+							 <div class="btn-group" role="group">
+							   <button type="button" class="btn btn-success viz bubble">Bubble Map</button>
+							  </div>
+							</div>
+				      <div id="visualizedata"></div>
+						</aside>
 
-					<div class="text-left">
-						<h4>Course Producer</h4>
-						<p class="pad-left-lg">&rArr; Hayley Novek - hayley@generalassemb.ly</p>
-					</div>
-				</section>
-
-				<!--  GA OVERVIEW -->
-				<section class="center">
-					<h1>GA Overview</h1>
-				</section>
-
-				<!-- ICEBREAKER -->
-				<section class="center">
-					<h1>Icebreaker</h1>
-					<img src="../img/class00/ice-breaker.jpg">
-				</section>
-
-				<!-- HOUSEKEEPING -->
-				<section class="center">
-					<h1>Housekeeping</h1>
-					<img src="../img/class00/housekeeping.jpg">
-				</section>
-
-				<section data-background="#FFF">
-					<h2 class="text-left">GA Graduation Requirements</h2>
-                    <hr>
-					<div class="text-left">
-						<p><strong>Homework:</strong> </p>
-                        <p class="pad-left-lg fragment">Complete 80% of assignments</p>
-						<p><strong>Attendance:</strong></p>
-                        <p class="pad-left-lg fragment">Miss no more than 2 classes</p>
-						<p><strong>Final Project:</strong></p>
-                        <p class="pad-left-lg fragment">Turn it in!</p>
 					</div>
 				</section>
 
-				<section data-background="#FFF">
-					<h2 class="text-left">Homework</h2>
-					<hr>
-					<div class="text-left">
-						<h4>Overview</h4>
-						<p class="pad-left-lg">&rArr; One assignment per week</p>
-						<p class="pad-left-lg">&rArr; Will start in class as final exercise</p>
-						<p class="pad-left-lg">&rArr; Due the following Tuesday</p>
-						<p class="pad-left-lg">&rArr; Will provide pre-work exercises/reading</p>
-						<h4>Grading</h4>
-						<p class="pad-left-lg">&rArr; Complete/Incomplete</p>
-					</div>
+						<!-- Choosing Colors -->
+				<section class="m1-s5" data-background="#FFF">
+					<div class="center">
+						<aside class="slide-title">
+					  	<h3>Choosing a Color Palette</h3>
+					  	<p class="fragment">Colors tend to have different meanings depending on the context. 
+					  	</p>
+					  
+				  		<p class="fragment">Good use of colors starts with leveraging contrast because it makes the message clear. 
+				  	</p>
+					  	<p class="fragment"> Be aware of the colors you choose and the associations they incite. Take for example red and green. When we look at those colors, we are already making a comparison in some way by linking red with “bad” and green with “good.”  </p>
+					  <p class="fragment">Another association could be green means go, and red means stop. Let’s also look at red and blue. You could associate red with hot, and blue with cold. </p>
+					  	<p class="fragment"><a target="blank" href="http://www.personal.psu.edu/cab38/ColorBrewer/ColorBrewer.html">ColorBrewer</a> to the rescue</p>
+					  </aside>
 
-				</section>
+					  <aside>									
+							<div class="btn-group btn-group-justified" role="group" aria-label="...">
+							<div class="btn-group" role="group">
+							  <button type="button" class="btn btn-warning viz choro">Choropleth Map</button>
+							 </div>
+							 <div class="btn-group" role="group">
+							   <button type="button" class="btn btn-success viz bubble">Bubble Map</button>
+							  </div>
+							</div>
+				      <div id="colorbrew"></div>
+						</aside>
 
-				<section data-background="#FFF">
-					<h2 class="text-left">Office Hours</h2>
-					<hr>
-					<div class="text-left">
-						<p>This $#!t is hard. We get it.</p>
-						<p>We want you to succeed and are here for you.</p>
-						<h4>How To Reach Us:</h4>
-						<p class="pad-left-lg">&rArr; Hit us up on Slack/email</p>
-						<p class="pad-left-lg">&rArr; Schedule office hours</p>
-						<p class="pad-left-lg">&rArr; In-person/Skype/Hangouts/Snapchat</p>
-					</div>
-				</section>
-
-				<section data-background="#FFF">
-					<h2 class="text-left">Exit Tickets/Feedback</h2>
-					<hr>
-
-					<div class="text-left">
-						<p>&#149; GA is <u>REALLY</u> into feedback</p>
-						<p>&#149; Helps us, help you</p>
-						<p>&#149; Two <b>BIG</b> feeback surveys:</p>
-                        <p class="pad-left-lg">&rArr; Midway</p>
-                        <p class="pad-left-lg">&rArr; End</p>
-						<p>&#149; Small feedback after every class</p>
 					</div>
 				</section>
 
-				<!-- TOOLS -->
-				<section class="center">
-					<h1>Tools</h1>
-					<img src="../img/class00/tools.jpg">
+								<!-- LEGENDS -->
+				<section class="m1-s6" data-background="#FFF">
+					<div class="center">
+						<aside class="slide-title">
+					  	<h3>Legends</h3>
+					  	<p class="fragment">Colors tend to have different meanings depending on the context. 
+					  	</p>
+					  	<p class="fragment"><a target="blank" href="http://www.personal.psu.edu/cab38/ColorBrewer/ColorBrewer.html">ColorBrewer</a> to the rescue</p>
+				  		<p class="fragment">Good use of colors starts with leveraging contrast because it makes the message clear. 
+				  	</p>
+					  	<p class="fragment"> Be aware of the colors you choose and the associations they incite. Take for example red and green. When we look at those colors, we are already making a comparison in some way by linking red with “bad” and green with “good.”  </p>
+					  <p class="fragment">Another association could be green means go, and red means stop. Let’s also look at red and blue. You could associate red with hot, and blue with cold. </p>
+					  </aside>
+
+					  <aside>									
+							<div class="btn-group btn-group-justified" role="group" aria-label="...">
+							<div class="btn-group" role="group">
+							  <button type="button" class="btn btn-warning viz choro">Choropleth Map</button>
+							 </div>
+							 <div class="btn-group" role="group">
+							   <button type="button" class="btn btn-success viz bubble">Bubble Map</button>
+							  </div>
+							</div>
+				      <div id="colorbrew">
+				      	<p data-height="650" data-theme-id="0" data-slug-hash="OMbZyM" data-default-tab="result" data-user="GraceTech" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/GraceTech/pen/OMbZyM/">D3.js Custom Map Markers</a> by Grace (<a href="http://codepen.io/GraceTech">@GraceTech</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+				      </div>
+						</aside>
+
+					</div>
+				</section>
+
+				<section class="m1-s7" data-background="#FFF">
+					 <div class="wrapper">
+						<h2 class="text-left">Client Story</h2>
+						<hr>
+						 <img class="fragment" src="../img/dataviz/GA_logo.png">
+	          <p class="text-left fragment">General Assembly (GA) is a global educational company on a mission to empower a global community to pursue work they love. Focusing on the most relevant and in-demand skills across data, design, business and technology</p>
+	           <p class="text-left fragment">They would like to build a dynamic data visualization that displays thier global presence and additional metrics based on the classes offered at each site and their current student enrollment.</p>       
+					</div>
+				</section>
+
+				<section class="m1-s9" data-background="#FFF">
+					<div class="wrapper">
+						<h2 class="text-left">Final Project Demo</h2>
+						<hr>       
+					</div>
 				</section>
 
 				<section data-background="#FFF" class="text-left">
@@ -180,31 +317,7 @@
 					</div>
 				</section>
 
-				<section data-background="#FFF">
-					<h2 class="text-left">GitHub - What Is It?</h2>
-					<hr>
 
-					<div class="text-left">
-						<p>&#149; GitHub is a platform makes it easy to work with git</p>
-						<p>&#149; Like Dropbox, but for code</p>
-						<p>&#149; Stores a history of files and their changes</p>
-						<p>&#149; Hosts files in the cloud; easy to share finished product</p>
-						<p>&#149; Also serves as a social network of sorts for developers collaborating on projects:</p>
-						<p class="pad-left-lg">&rArr; <a href="https://github.com/twbs/bootstrap">Twitter Bootstrap</a></p>
-					</div>
-				</section>
-
-				<section data-background="#FFF">
-					<h2 class="text-left">GitHub - Why Do Developers Use It?</h2>
-					<hr>
-
-					<div class="text-left">
-						<p>&#149; Tracks changes so you can see who worked on (or, broke) what</p>
-						<p>&#149; Stores history; we can easily fix mistakes</p>
-						<p>&#149; Allows multiple developers to work on the same project</p>
-						<p>&#149; Allows for line-by-line feedback</p>
-					</div>
-				</section>
 
 				<section data-background="#FFF" class="text-left">
 					<h2>GitHub - some vocab words</h2>
@@ -277,44 +390,7 @@
 					<p>7) View your changes online</p>
 				</section>
 
-				<section data-background="#FFF" class="text-left">
-					<h2>Muy Importante</h2>
-					<hr>
-					<p>&#149; Your repo's name needs to match your GitHub username!</p>
-					<p>&#149; Ex:</p>
-					<p class="pad-left-lg"><strong>Username: </strong>keanu-reeves</p>
-					<p class="pad-left-lg"><strong>Repo: </strong>keanu-reeves.github.io</p>
-				</section>
-
-				<!-- END/WRAPUP -->
-				<section class="center">
-					<img src="../img/main/the-end.jpg" alt="">
-				</section>
-
-				<section>
-					<h2>Tips For Success</h2>
-					<hr>
-
-                    <div class="text-left">
-					<p class="fragment">&#149; Do the work</p>
-					<p class="fragment">&#149; Engage</p>
-					<p class="fragment">&#149; Become comfortable with the unknown</p>
-					<p class="fragment">&#149; Be curious and resourceful</p>
-					<p class="fragment">&#149; Reach out for help/help others</p>
-					<p class="fragment">&#149; Don't judge</p>
-					<p class="fragment">&#149; Do the work...and then some</p>
-                    </div>
-				</section>
-
-                <section data-background="#FFF" class="text-left">
-                    <h2 class="text-left">What's On Deck</h2>
-                    <hr>
-
-                    <h4>Class #01 (of 20) - Introduction to HTML</h4>
-                    <p class="pad-left-lg">&rArr; HTML Tags</p>
-                    <p class="pad-left-lg">&rArr; Page Structure</p>
-                    <p class="pad-left-lg">&rArr; <code>&lt;img&gt;</code> and <code>&lt;a&gt;</code> tags</p>
-                </section>
+          
 			</div>
 		</div>
 
@@ -334,16 +410,42 @@
 
 				// Optional reveal.js plugins
 				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { 
+						hljs.tabReplace = '  ';
+						hljs.initHighlightingOnLoad(); } },
 					{ src: '../plugin/zoom-js/zoom.js', async: true },
 					{ src: '../plugin/notes/notes.js', async: true }
 				]
 			});
-
 		</script>
+
+
+					
+		  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="//d3js.org/d3.geo.projection.v0.min.js"></script>
+    <script src="../js/scripts/reusable.d3.charts.js"></script>
+     <script src="../js/scripts/projections.js"></script>
+    
+    <script src="../js/scripts/visualizedata.js"></script>
+		<script src="../js/scripts/colorbrew.js"></script>
+
+		  <script>
+					  Reveal.addEventListener('fragmentshown', function(event) {
+								console.log(event.fragment.id)
+  							if(event.fragment.id === 'ortho') { 
+  								changeGeo('orthographic') }
+					  		if(event.fragment.id === "bubble") { 
+					  			changeViz("bubble")
+					  		}
+					  	});
+					   d3.select(window).on("resize",function(){ throttle() } )
+					  </script>
+
 
 	</body>
 </html>
