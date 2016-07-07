@@ -12,6 +12,9 @@
 		<link rel="stylesheet" href="../lib/css/zenburn.css">
     <!-- Font Awesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+		<!-- Animate CSS --> 
+		<link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+		<!-- Custome CSS --> 
 		<link rel="stylesheet" href="../css/mod1.css">
 
 	 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -69,6 +72,11 @@
     /* Section 2 */
     .m1-s2 .wrapper { padding: 250px 100px;}
     .m1-s2 hr { border: 5px solid steelblue;}
+    .m1-s2 .small-projections {position: absolute;
+    left: 28%;top: 40%;width: 66%;height: 41%;}
+    .m1-s2 .hovereffect { width:33%; }
+/*    border: 5px solid black;*/
+  }
 
   /* Section 3 - PROJECTIONS */
     .m1-s3 #projections { background-color: #cecece;}
@@ -132,10 +140,10 @@
 					<div>
 						<ul>
 							<li class="fragment highlight-blue">Mapping Concepts</li>
-							<li>Client Story</li>
-							<li>Final Project Review</li>
-							<li>Inital Setup</li>
-							<li>More Tools</li>
+							<li class="fragment highlight-blue">Client Story</li>
+							<li class="fragment highlight-blue">Final Project</li>
+							<li class="fragment highlight-blue">Inital Setup</li>
+							<li class="fragment highlight-blue" id="moretools">More Tools</li>
 						</ul>
 					</div>
 				</section>
@@ -145,10 +153,71 @@
 				 <div class="wrapper">
 					<h2 class="text-left">Mapping Concepts</h2>
 					<hr>
-          <p class="text-left fragment">Projections</p>
-          <p class="text-left fragment">Visualizing the Data</p>
+					<div>
+          <p class="text-left fragment" id="small-projections">Projections</p>
+          <p class="text-left fragment">Visualizing Data</p>
           <p class="text-left fragment">Color Palettes</p>
           <p class="text-left fragment">Legends</p>
+          </div>
+				</div>
+				<div class="small-projections pull-left">
+						<div class="row">
+						    <div class="hovereffect">
+						            <img src="https://camo.githubusercontent.com/64176495a5d2700fb37d8099f0385774e729ac97/687474703a2f2f626c2e6f636b732e6f72672f6d626f73746f636b2f7261772f333735373133322f7468756d626e61696c2e706e67" width="100%" data-canonical-src="http://bl.ocks.org/mbostock/raw/3757132/thumbnail.png" style="max-width:100%;">
+						        <div class="overlay">
+						           <h2>Mercator</h2>
+						           <a class="info" href="#">link here</a>
+						        </div>
+						    </div>		
+		
+						    <div class="hovereffect">
+						        <img src="https://camo.githubusercontent.com/510ed66d8c29e34e1010f2167baabd1d01b5fe3b/687474703a2f2f626c2e6f636b732e6f72672f6d626f73746f636b2f7261772f333735373131392f7468756d626e61696c2e706e67" width="100%" data-canonical-src="http://bl.ocks.org/mbostock/raw/3757119/thumbnail.png" style="max-width:100%;">
+						        <div class="overlay">
+						           <h2>Equirectangular</h2>
+						        
+						        </div>
+						    </div>		
+		   					<div class="hovereffect">
+						        <img src="https://camo.githubusercontent.com/d981740531e4bae84ca7477db60057a8a0104e7e/687474703a2f2f626c2e6f636b732e6f72672f6d626f73746f636b2f7261772f333733343333362f7468756d626e61696c2e706e67" width="100%" data-canonical-src="http://bl.ocks.org/mbostock/raw/3734336/thumbnail.png" style="max-width:100%;">
+						        <div class="overlay">
+						           <h2>Mollweide</h2>
+						         
+						        </div>
+						    </div>	
+						 <!--    <div class="hovereffect">
+						        <img class="img-responsive" src="http://placehold.it/320x200" alt="">
+						        <div class="overlay">
+						           <h2>Hover effect 4</h2>
+						           <a class="info" href="#">link here</a>
+						        </div>
+						    </div> -->
+						</div>
+				
+						<div class="row">
+						    <div class="hovereffect">
+						        <img src="https://camo.githubusercontent.com/14ddf109f2a1e2209055a329b79bde866f8089a8/687474703a2f2f626c2e6f636b732e6f72672f6d626f73746f636b2f7261772f333739303434342f7468756d626e61696c2e706e67" width="320" data-canonical-src="http://bl.ocks.org/mbostock/raw/3790444/thumbnail.png" style="max-width:100%;">
+						        <div class="overlay">
+						           <h2>Satellite</h2>
+						           <a class="info" href="#">link here</a>
+						        </div>
+						    </div>		
+						    <div class="hovereffect pull">
+						        <img src="https://camo.githubusercontent.com/dfecbee4b4fe23e79efa8edc05c7840c0a9d0322/687474703a2f2f7777772e6a61736f6e6461766965732e636f6d2f6d6170732f67696e676572792f7468756d622e64332e706e67" width="320" data-canonical-src="http://www.jasondavies.com/maps/gingery/thumb.d3.png" style="max-width:100%;">
+						        <div class="overlay">
+						           <h2>Gingery</h2>
+						           <a class="info" href="#">link here</a>
+						        </div>
+						    </div>		
+		   					<div class="hovereffect">
+						        <img src="https://camo.githubusercontent.com/81da8fb3f186bd123ae3d06ea43a07456d5591f6/687474703a2f2f7777772e6a61736f6e6461766965732e636f6d2f6d6170732f74776f2d706f696e742d6571756964697374616e742f7468756d622e64332e706e67" width="320" data-canonical-src="http://www.jasondavies.com/maps/two-point-equidistant/thumb.d3.png" style="max-width:100%;">
+						        <div class="overlay">
+						           <h2>Two Point Azimuthal</h2>
+						           <a class="info" href="#">link here</a>
+						        </div>
+						    </div>	
+						</div>
+				
+
 				</div>
 				</section>
 
@@ -271,53 +340,6 @@
 					</div>
 				</section>
 
-				<section class="m1-s7" data-background="#FFF">
-					 <div class="wrapper">
-						<h2 class="text-left">Client Story</h2>
-						<hr>
-						 <img class="fragment" src="../img/dataviz/GA_logo.png">
-	          <p class="text-left fragment">General Assembly (GA) is a global educational company on a mission to empower a global community to pursue work they love. Focusing on the most relevant and in-demand skills across data, design, business and technology</p>
-	           <p class="text-left fragment">They would like to build a dynamic data visualization that displays thier global presence and additional metrics based on the classes offered at each site and their current student enrollment.</p>       
-					</div>
-				</section>
-
-				<section class="m1-s9" data-background="#FFF">
-					<div class="wrapper">
-						<h2 class="text-left">Final Project Demo</h2>
-						<hr>       
-					</div>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<h2>Tools</h2>
-					<hr>
-					<p> &#149; <strong>Web Browser:</strong> Google Chrome</p>
-					<p> &#149; <strong>Text Editor:</strong> Sublime Text 3</p>
-					<p> &#149; <strong>GitHub:</strong> <a href="http://github.com">http://github.com</a></p>
-					<p> &#149;
-						<strong>CodePen:</strong> <a href="http://codepen.io/Yakudoo/pen/YXxmYR">codepen.io</a>
-					</p>
-					<p> &#149; <strong>Slack Channel:</strong> <a href="https://fewd82.slack.com/">https://fewd82.slack.com/</a></p>
-					<p> &#149; <strong>Course Website:</strong> <a href="http://gafewd.github.io">http://gafewd.github.io</a></p>
-				</section>
-
-				<!-- GIT/GITHUB -->
-				<section class="center">
-					<h1>git/github</h1>
-					<img src="../img/class00/github-logo.jpg">
-				</section>
-
-				<section data-background="#FFF">
-					<h2 class="text-left">git - What is it?</h2>
-					<hr>
-					<div class="text-left">
-						<p>&#149; git &ne; GitHub</p>
-						<p>&#149; git is a version control program</p>
-						<p>&#149; Watches files and records any changes</p>
-					</div>
-				</section>
-
-
 
 				<section data-background="#FFF" class="text-left">
 					<h2>GitHub - some vocab words</h2>
@@ -336,46 +358,6 @@
 					<p>&#149; One or more users can contribute to a single repository</p>
 					<p>&#149; Repositories are either public or private</p>
 					<p>&#149; By EOC, you will each create your own repo!</p>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<h2>GitHub - Clone</h2>
-					<hr>
-					<p>&#149; Copies/clones a <u>remote</u> repo to your machine</p>
-					<p>&#149; This copy/clone is called a <u>local</u> repo</p>
-					<p>&#149; Changes to the <u>local</u> repo will not affect the <u>remote</u></p>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<h2>GitHub - Commit</h2>
-					<hr>
-					<p>&#149; A snapshot of changes to a repo</p>
-					<p>&#149; Think of it as "saving" your changes</p>
-					<p>&#149; Contains a message describing the changes made</p>
-					<!-- <p>&#149; </p> -->
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<h2>GitHub - Push</h2>
-					<hr>
-					<p>&#149; "Pushes" your commits (saved changes) to a <u>remote</u> repository</p>
-					<p>&#149; Allows other developers to see your changes and "pull them down" to their own local repos</p>
-				</section>
-
-				<section data-background="#FFF" class="text-left">
-					<h2>GitHub - How Will We Use It?</h2>
-					<hr>
-					<p>&#149; You will create your own repository to host your:</p>
-					<p class="pad-left-lg">&rArr; Homework</p>
-					<p class="pad-left-lg">&rArr; Class work</p>
-					<p class="pad-left-lg">&rArr; Final projects</p>
-					<p>&#149; Instructors will use your repo to grade homework</p>
-					<p>&#149; Your repo will serve as a public portfolio of your accomplishments</p>
-				</section>
-
-				<section class="center">
-					<h1>Don't Worry</h1>
-					<h1>We Will Practice</h1>
 				</section>
 
 				<section class="text-left" data-background="#FFF">
@@ -436,13 +418,43 @@
 
 		  <script>
 					  Reveal.addEventListener('fragmentshown', function(event) {
+
 								console.log(event.fragment.id)
   							if(event.fragment.id === 'ortho') { 
+  								debugger;
   								changeGeo('orthographic') }
 					  		if(event.fragment.id === "bubble") { 
 					  			changeViz("bubble")
 					  		}
-					  	});
+					  		if(event.fragment.id === "moretools") {
+					  				d3.selectAll(".hovereffect").style("opacity",0)
+					  		}
+					  		if(event.fragment.id === "small-projections"){
+					  		
+					  			d3.selectAll(".hovereffect").each(function(d,i) { 
+					  					var index = i + 1
+					  					d3.select(this)
+    										.transition().delay(function(d) { 
+    											//console.log(i)
+    											return index/8 * 10000})
+    										.style("opacity",1)
+					  			})
+
+					  			// .each(function(d,i) {
+    						// 				d3.select(this).style("opacity",0)
+    						// 				.transition().delay(function(d,i) { 
+    						// 					console.log(i)
+    						// 					return i * 10000})
+    						// 				.transition().duration(5000)
+    						// 				.style("opacity",1)
+										// })
+    										//.classed("animated fadeIn",true);
+
+					  			//.transition().duration(500).delay(function(d,i) { console.log(i) ; return i * 1000 } )
+					  			//.classed("animated fadeIn",true)
+					  	
+					  	};
+					  })
 					   d3.select(window).on("resize",function(){ throttle() } )
 					  </script>
 

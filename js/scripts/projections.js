@@ -1,6 +1,6 @@
 //(function() { 
 
-//d3.select(window).on("resize",function(){ console.log("inside proj resize");resizeProj() } )
+d3.select(window).on("resize",function(){ console.log("inside proj resize");resizeProj() } )
 
 var maptype = "";
 
@@ -8,7 +8,7 @@ init()
 
 function init() {
 	var target = "#projections"
-	w1 = canvasSize(target)[0]-40;
+	w1 = canvasSize(target)[0];
 	//canvasSize error on initial page load regarding -100 height
 	h1 = (canvasSize(target))[1] ? (canvasSize(target)[1]) : 650;
 
@@ -27,15 +27,19 @@ function init() {
 }//init()			
 //resize makes the map responsive
 function resizeProj() {
-	  //console.log("inside reize for projections.js")
+	  console.log("inside reize for projections.js")
 		var target = "#projections"
-		w1 = canvasSize(target)[0]-40;
+		w1 = canvasSize(target)[0];
 		h1 = (canvasSize(target))[1] ? (canvasSize(target)[1]) : 650;
 			console.log(w1)
 		//Create SVG
 		//svg.attr({"width":w1,"height":h1}).style("z-index",1);
-		d3.select("svg.projections").attr("width",w1).attr("height",h1)
-	  maptype == "mercator" ? changeGeo("mercator") : changeGeo("orthographic")	
+		var sel = d3.select("svg.projections").attr("width",w1).attr("height",h1)
+		projection = d3.geo.mercator().scale(w1/8).translate([w1/2, h1/2]);
+		path = d3.geo.path().projection(projection)
+		var map = d3.select("svg.projections").selectAll("path.section1map")
+			.attr("d",path)
+	  //.translate([0, 0]);maptype == "mercator" ? changeGeo("mercator") : changeGeo("orthographic")	
 }
 
 function  changeGeo(proj) {  
@@ -120,6 +124,7 @@ function boundingBox(path,json){
 	b = path.bounds(json);
   s = .95/Math.max((b[1][0] - b[0][0]) / w1, (b[1][1] - b[0][1]) / h1);
   t = [(w1 - s * (b[1][0] + b[0][0])) / 2, (h1 - s * (b[1][1] + b[0][1])) / 2];
+  console.log(s,t)
   return [s,t]
 }
 
@@ -127,7 +132,7 @@ var throttleTimer;
 function throttle() {
   window.clearTimeout(throttleTimer);
   throttleTimer = window.setTimeout(function() {
-    resizeProj();
+    //resizeProj();
   }, 1000);
 }
 
@@ -143,6 +148,7 @@ function equator(path){
 		       .style("stroke-width", 0.5);
 }
 
+d3.select(window).on("resize",function(){ console.log("inside proj resize");resizeProj() } )
 
 
 //})()
